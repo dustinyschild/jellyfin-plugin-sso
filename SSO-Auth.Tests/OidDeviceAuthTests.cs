@@ -57,7 +57,9 @@ public class OidDeviceAuthTests : IDisposable
         // Bootstrap the static singleton so the controller can read OidConfigs.
         // xUnit creates a new test class instance per test, so this runs fresh each time.
         var appPaths = new Mock<IApplicationPaths>();
-        appPaths.Setup(x => x.PluginConfigurationsPath).Returns(_tempDir);
+        // BasePlugin accesses several path properties in its ctor (DataPath, PluginConfigurationsPath, etc.)
+        // so default all string returns to the temp dir to avoid NullReferenceExceptions.
+        appPaths.SetReturnsDefault(_tempDir);
         var xmlSerializer = new Mock<IXmlSerializer>();
         xmlSerializer
             .Setup(x => x.DeserializeFromFile(typeof(PluginConfiguration), It.IsAny<string>()))
