@@ -1,0 +1,21 @@
+[
+  {
+    "category": "Authentication",
+    "description": "This plugin allows users to sign in through an SSO provider. Forked to add OAuth2 device authorization grant support (RFC 8628).",
+    "guid": "505ce9d1-d916-42fa-86ca-673ef241d7df",
+    "imageUrl": null,
+    "name": "SSO-Auth",
+    "overview": "Authenticate users against an SSO provider.",
+    "owner": "dustinyschild",
+    "versions": [
+      {
+        "checksum": "dbad5161b925299d34b1770e1709f23f",
+        "changelog": "Add OAuth2 device code flow authentication endpoint (POST /sso/OID/DeviceAuth/{provider})",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/dustinyschild/jellyfin-plugin-sso/releases/download/v4.0.0.5/sso-authentication_4.0.0.5.zip",
+        "timestamp": "2026-05-29T00:00:00Z",
+        "version": "4.0.0.5"
+      }
+    ]
+  }
+]
